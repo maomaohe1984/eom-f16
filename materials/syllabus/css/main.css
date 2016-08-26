@@ -277,6 +277,27 @@ h1 {
 .css::after {
   content:'\007D';}
 
+.theme {
+  color: #222;
+  font-style: italic;
+  background-color: pink;
+  padding: 1px 3px 1px 3px;
+}
+
+/* http://colorbrewer2.org/?type=qualitative&scheme=Set3&n=12 */
+.theme.c1 { background-color: #8dd3c7; }
+.theme.c2 { background-color: #ffffb3; }
+.theme.c3 { background-color: #bebada; }
+.theme.c4 { background-color: #fb8072; }
+.theme.c5 { background-color: #80b1d3; }
+.theme.c6 { background-color: #fdb462; }
+.theme.c7 { background-color: #b3de69; }
+.theme.c8 { background-color: #fccde5; }
+.theme.c9 { background-color: #d9d9d9; }
+.theme.c10 { background-color: #bc80bd; }
+.theme.c11 { background-color: #ccebc5; }
+.theme.c12 { background-color: #ffed6f; }
+
 .html {
   color: black;
   background-color: #eee;
@@ -326,8 +347,16 @@ h1 {
   margin: 1em 0 3em 0;
   padding: 0;
 }
+
 .highlight {
   background: yellow;
+  padding-left: 3px;
+  padding-right: 3px;
+  display: inline-block;
+}
+.assignment-due {
+  background: rgba(205, 255, 4, 0.2);
+  font-style: italic;
   padding-left: 3px;
   padding-right: 3px;
   display: inline-block;
