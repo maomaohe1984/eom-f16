@@ -2,7 +2,9 @@ size(100, 500);
 
 // "for" loop
 // https://processing.org/reference/for.html
-for (int i=0; i<4; i++) { 
+for (int i=0; i<14; i++) { 
+  fill(#AA2CD8);
+  strokeWeight(i);
   ellipse(20, 20+(i*19), 15, 15);
   println(i); // means print line
 }
