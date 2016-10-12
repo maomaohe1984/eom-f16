@@ -14,6 +14,7 @@
  */
 int a0 = 0; // current value of potentiometer 0
 int a1 = 0; // current value of potentiometer 1
+float unitRange = 0;
 
 // the setup function runs once when you press reset or power the board
 void setup() {
@@ -30,21 +31,21 @@ void loop() {
 
     /* analogRead takes values 0-1023, https://www.arduino.cc/en/Reference/AnalogRead
      *  lets map this to 0-1 for our Processing sketch */
-    float unitRange = a0 / 1023.0;
+    unitRange = a0 / 1023.0;
 
     // Send the number as string with 2 decimal places
     // and the ID of this sensor
     // over the serial line, followed by a line-feed (enter)
     // something like:
     // 0, 0.34
-    Serial.println("0," + String(a0), 2);
+    Serial.println("0," + String(unitRange, 2));
   }
 
   // potentiometer 1 
   if (analogRead(1) != a1) {
     a1 = analogRead(1);
-    float unitRange = a1 / 1023.0;
-    Serial.println("1," + String(a1), 2);
+    unitRange = a1 / 1023.0;
+    Serial.println("1," + String(unitRange, 2));
   }
 
   /* we almost always want a delay when sending data over serial

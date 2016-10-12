@@ -11,6 +11,9 @@
  *  and then you will have properly wired a potentiometer to Analog-0 on your Arduino.
  *  You should run thier example Sketch to make sure you haved wired your potentiometer properly
  *  then load this sketch onto your Arduino 
+ *  
+ *  Keep your Arduino plugged into your computer, so that you can use the USB-Serial
+ *  line for communication
  */
 int a0 = 0; // current value of potentiometer
 
@@ -33,7 +36,7 @@ void loop() {
 
     // Send the number as string with 2 decimal places
     // over the serial line, followed by a line-feed (enter)
-    Serial.println(a0, 2); 
+    Serial.println(unitRange, 2); 
   }
 
   /* we almost always want a delay when sending data over serial

@@ -5,8 +5,13 @@
  * 
  * 1) Setup your circuit and Arduino
  * see documentation in the Arduino Sketch
+ * make sure to keep you Arduino plugged into your computer
+ * since you are using the USB-Serial line to communicate with the Sketch
  *
  * 2) Run this sketch
+ *
+ * TIP: make sure to stop this Sketch if you need to update your Arduino
+ * since this sketch is using the Serial line needed for Arduino uploading
  *
  */
 import processing.serial.*; 
@@ -24,6 +29,7 @@ void setup() {
 
   // Open the port you are using at the rate you want:
   // update [0] below to match the actual port listed in the console
+  // should be /dev/tty.usbmodem1411 on a Mac
   arduino = new Serial(this, Serial.list()[0], 9600);
   
   // only fire the serialEvent once we have received the linefeed
@@ -50,4 +56,6 @@ void serialEvent(Serial s) {
    * to the range 0-1, it is always good practice to use
    * constrain() in case noise on the Serial line has damaged our data */
   sensorValue = constrain(float(val), 0, 1);
+  
+  println("Received value from Arduino: ", sensorValue);
 }

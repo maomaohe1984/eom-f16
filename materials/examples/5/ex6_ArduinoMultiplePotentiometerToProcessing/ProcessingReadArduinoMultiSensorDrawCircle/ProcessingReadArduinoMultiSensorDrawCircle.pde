@@ -26,7 +26,8 @@ void setup() {
 
   // Open the port you are using at the rate you want:
   // update [0] below to match the actual port listed in the console
-  arduino = new Serial(this, Serial.list()[0], 9600);
+  // should be /dev/tty.usbmodem1411 on a Mac
+  arduino = new Serial(this, Serial.list()[5], 9600);
 
   // only fire the serialEvent once we have received the linefeed
   // IE wait until the Arduino has sent us a complete line
@@ -34,15 +35,15 @@ void setup() {
 }
 
 void draw() {
-  background(255);
+  background(0, 0, 0, 0);
   colorMode(HSB, 360, 1, 1, 1);
 
   // Use the value of sensor0 to determine the circle size
   float ellipseDiameter = map(sensor0, 0, 1, 30, width*1.1);
-  
+
   // Use the value of sensor1 to determine the circle hue
   float hue = map(sensor1, 0, 1, 0, 360);
-  
+
   fill(hue, 1, 1);  
   strokeWeight(2);
   stroke(80);
