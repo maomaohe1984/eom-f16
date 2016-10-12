@@ -24,8 +24,8 @@ void setup() {
 
 // the loop function runs over and over again forever
 void loop() {
-  int buttonState = digitalRead(pushButton);
-  Serial.println(buttonState); // send the button state over the serial line
+  byte buttonState = digitalRead(pushButton);
+  Serial.write(buttonState); // send the button state over the serial line
 
   /* we almost always want a delay when sending data over serial
      because the Arduino loop occurs much quicker than we want to send over the serial line */

@@ -22,13 +22,15 @@ void setup() {
   printArray(Serial.list());
 
   // Open the port you are using at the rate you want:
-  // change [0] if your Arduino is not on the first port listed above
+  // update [0] below to match the actual port listed in the console
+  // should be /dev/tty.usbmodem1411 on a Mac
   arduino = new Serial(this, Serial.list()[0], 9600);
 }
 
 void draw() {
   while (arduino.available() > 0) {
     buttonValue = arduino.read();
+    println(buttonValue);
   }
   
   if(buttonValue == 0){

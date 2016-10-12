@@ -27,7 +27,7 @@ void setup() {
   // Open the port you are using at the rate you want:
   // update [0] below to match the actual port listed in the console
   // should be /dev/tty.usbmodem1411 on a Mac
-  arduino = new Serial(this, Serial.list()[5], 9600);
+  arduino = new Serial(this, Serial.list()[0], 9600);
 
   // only fire the serialEvent once we have received the linefeed
   // IE wait until the Arduino has sent us a complete line
